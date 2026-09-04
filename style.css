@@ -1,27 +1,618 @@
-/* Eliminate all default browser spacing elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('resources/fontloader.css');
+
+body{
+    background-color: #ffccd5;
 }
 
-body {
-  background-color: #ffd1dc; 
-  min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  overflow-x: hidden;
+#header{
+    font-size: 30px;
+    margin-left: 30px;
+    color: #ffff;
 }
 
-/* Master container scales full width edge-to-edge */
-.website-container {
-  position: relative;
-  width: 100vw;       
-  margin: 0;
-  padding: 0;
+#ct{
+    margin-top: -30px;
+    
 }
 
-.main-layout-png {
-  width: 100%;
-  height: auto;
-  display: block;
+#title{
+    font-family: 'Migraitalic';
+}
+
+.mainbody {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 70px;
+    box-sizing: border-box;
+}
+
+#maintext {
+    width: 50%;
+    color: #ffffff;
+    font-family: 'Helios', sans-serif;
+    font-size: 80px; /* Reduced slightly so it fits nicely on screen */
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* Right column container that stacks image + button vertically */
+.right-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between the cat image and the button */
+    width: 35%;
+}
+
+#mainimage {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    /* Removed float: right so flex layout works properly */
+}
+.message{
+    color: #ffff;
+    font-family: 'Helios';
+    font-size: 30px;
+    background-image: url("resources/2ndpagebg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    place-items: center;
+    display: grid;
+    height: 8in;
+}
+
+#messagebox {
+    text-align: center;
+    color: #ffff;
+    width: 50%;
+}
+
+.wwcdfy {
+    color: #ffffff;
+    font-family: 'LazyDog';
+    font-size: 30px;
+    background-image: url("resources/3rdpagebg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 50px;
+}
+
+.wwcdfy #content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 150px;
+    margin-top: 20px;
+}
+
+/* Container for each image + text */
+.wwcdfy #content .card {
+    position: relative;
+    width: 300px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.wwcdfy-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text overlay container */
+.wwcdfy #content .card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Helios';
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); /* Dark gradient behind text for readability */
+    color: #ffffff;
+}
+
+.wwcdfy #content .card-text h3 {
+    font-size: 16px;
+    margin: 0 0 6px 0;
+    color: #ff9ebb; /* Optional highlight title color */
+}
+
+.wwcdfy #content .card-text p {
+    font-size: 11px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.whyus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: url("resources/4thpagebg.png");
+    background-repeat: no-repeat;
+    font-family: 'LazyDog', sans-serif; 
+}
+
+.whyus h1 {
+    flex: 1;
+    font-size: 80px;
+    color: #ffffff;
+    margin: 0;
+    text-align: left;
+    padding-right: 500px;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.whyus #content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 550px;
+}
+
+.whyus .card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    /* Reset card heights/widths set by .wwcdfy .card so it doesn't clip */
+    width: auto;
+    height: auto;
+    overflow: visible;
+    background: transparent;
+}
+
+.whyus .card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    /* Ensures black/colored icons turn pure white to match design */
+    filter: brightness(0) invert(1);
+}
+
+.whyus .card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.whyus .card h3 {
+    font-family: 'Migraitalic', serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+}
+
+.whyus .card p {
+    font-family: 'Helios', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.margin {
+    height: 10in;
+    margin: 0px;
+    background-image: url("resources/marg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ==========================================
+   FOOTER / CONTACT SECTION
+   ========================================== */
+
+.footer-section {
+    background-color: #ffccd5;
+    padding: 40px 60px 80px 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header & Brand Logo */
+.footer-header {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-family: 'Migraitalic', serif;
+    font-size: 38px;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Main Body Layout */
+.footer-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Left Content Styles */
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 550px;
+}
+
+.cta-heading {
+    font-family: 'LazyDog', sans-serif;
+    font-size: 52px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icon img {
+    width: 38px;
+    height: 38px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Right Content Styles */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.swan-img {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-btn {
+    font-family: 'Helios', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    padding: 12px 45px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-btn:hover {
+    background-color: #ffffff;
+    color: #ffccd5;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 12px 45px;
+  background: linear-gradient(180deg, #f78ba5 0%, #eb5b7f 50%, #d8456b 100%);
+  color: #ffffff;
+  font-family: 'LazyDog', sans-serif; /* Uses your site's font */
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 50px; /* Gives it the pill shape */
+  
+  /* 3D Glossy Light Highlight (top) and Dark Shadow (bottom) */
+  box-shadow: 
+    inset 0 3px 4px rgba(255, 255, 255, 0.7),   /* Top white shine */
+    inset 0 -3px 5px rgba(0, 0, 0, 0.3),        /* Inner bottom shade */
+    0 4px 8px rgba(0, 0, 0, 0.25);              /* Soft drop shadow below button */
+    
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+/* Hover and active click animation */
+.join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 3px 4px rgba(255, 255, 255, 0.8),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.join-btn:active {
+  transform: translateY(1px);
+  box-shadow: 
+    inset 0 2px 3px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   SCROLL ANIMATION BASE STYLES
+   ========================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay classes for card groups */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.25s; }
+.delay-3 { transition-delay: 0.4s; }
+
+/* ==========================================
+   RESPONSIVE — TABLET (max-width: 900px)
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .mainbody {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  #maintext {
+    width: 100%;
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+
+  .right-hero {
+    width: 100%;
+    align-items: center;
+  }
+
+  #mainimage {
+    max-width: 260px;
+  }
+
+  .wwcdfy {
+    padding: 80px 30px;
+  }
+
+  .wwcdfy h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .wwcdfy #content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .whyus {
+    flex-direction: column;
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  .whyus h1 {
+    padding-right: 0;
+    margin-bottom: 40px;
+    font-size: 56px;
+  }
+
+  .whyus .card {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .footer-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .left-content {
+    align-items: center;
+  }
+
+  .cta-heading {
+    font-size: 38px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .swan-img {
+    width: 180px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — MOBILE (max-width: 600px)
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  #header {
+    margin-left: 15px;
+  }
+
+  #header #title {
+    font-size: 22px;
+  }
+
+  #header #ct {
+    font-size: 16px;
+  }
+
+  .mainbody {
+    padding: 25px 18px;
+  }
+
+  #maintext {
+    font-size: 34px;
+  }
+
+  #mainimage {
+    max-width: 200px;
+  }
+
+  .join-btn {
+    font-size: 18px;
+    padding: 10px 35px;
+  }
+
+  .message {
+    font-size: 18px;
+    height: auto;
+    min-height: 50vh;
+    padding: 40px 15px;
+  }
+
+  #messagebox {
+    width: 90%;
+  }
+
+  #messagebox h1 {
+    font-size: 24px;
+  }
+
+  .wwcdfy {
+    padding: 50px 15px;
+  }
+
+  .wwcdfy h1 {
+    font-size: 26px;
+  }
+
+  .wwcdfy #content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .wwcdfy .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .whyus {
+    padding: 50px 8%;
+  }
+
+  .whyus h1 {
+    font-size: 40px;
+  }
+
+  .whyus .card h3 {
+    font-size: 22px;
+  }
+
+  .whyus .card p {
+    font-size: 13px;
+  }
+
+  .margin {
+    height: 50vh;
+  }
+
+  .footer-section {
+    padding: 30px 20px 60px 20px;
+    min-height: auto;
+  }
+
+  .brand-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+  }
+
+  .cta-heading {
+    font-size: 28px;
+  }
+
+  .contact-btn {
+    padding: 10px 30px;
+    font-size: 13px;
+  }
 }
