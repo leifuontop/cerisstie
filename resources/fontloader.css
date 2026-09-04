@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Helios';
+    src: local('Helios'),
+     url("font/helios.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Migraitalic';
+    src: local('Migraitalic'), 
+     url("font/migraitalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LazyDog';
+    src: local('LazyDog'), 
+     url("font/lazy_dog.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
