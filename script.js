@@ -2,13 +2,13 @@
 const music = document.getElementById('bg-music');
 
 if (music) {
-  music.volume = 0.15;
+  music.volume = 1;
 
   music.play().catch(() => {
     // Autoplay blocked — retry on first user interaction
     const playOnInteraction = () => {
       if (music.paused) {
-        music.volume = 0.15;
+        music.volume = 1;
         music.play().catch(() => {});
       }
       window.removeEventListener('click', playOnInteraction);
